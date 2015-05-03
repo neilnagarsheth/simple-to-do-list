@@ -1,0 +1,53 @@
+.shiftnav-content-wrap{
+	25px;
+}
+
+.list-item{
+	height: 50px;
+	width:100%;
+	border:2px solid black;
+	border-radius:10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+    background-color: -moz-field;
+    box-shadow: 1px 1px 1px 0 lightgray inset;  
+    display:inline-table;
+    clear:both;
+}
+
+.list-input{
+	height:50px;
+	width:80%;
+	line-height: 50px;
+	vertical-align: middle;
+	font-size: 20px;
+	-moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    font: -moz-field;
+    float:left;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#add-button{
+	height : 30px;
+	width:100px;
+	border: 2px solid gray;
+	border-radius:10px;
+	font-size: 22px;
+	text-align: center;
+	cursor:pointer;
+}
+
+.remove-item{
+	height: 30px;
+	width: 12%;
+	border: 2px solid black;
+	border-radius:20px;
+	background-color: red;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-right: 3%;
+	float: right;
+	cursor:pointer;
+}
