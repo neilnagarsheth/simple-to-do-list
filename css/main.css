@@ -41,13 +41,18 @@
 
 .remove-item{
 	height: 30px;
-	width: 12%;
-	border: 2px solid black;
+	width: 30px;
+	border: 2px;
 	border-radius:20px;
 	background-color: red;
 	margin-bottom: 10px;
 	margin-top: 10px;
-	margin-right: 3%;
+	margin-right: 1.25%;
 	float: right;
 	cursor:pointer;
+	text-align: center;
+	line-height: 30px;
+	color:white;
+	vertical-align: middle;
+	font-family: 'Helvetica';
 }
