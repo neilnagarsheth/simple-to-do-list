@@ -9,24 +9,24 @@
 	border-radius:10px;
 	margin-bottom: 10px;
 	margin-top: 10px;
-    background-color: -moz-field;
-    box-shadow: 1px 1px 1px 0 lightgray inset;  
-    display:inline-table;
-    clear:both;
+  background-color: -moz-field;
+  box-shadow: 1px 1px 1px 0 lightgray inset;  
+  display:inline-table;
+  clear:both;
 }
 
 .list-input{
 	height:50px;
-	width:80%;
+	width:78%;
 	line-height: 50px;
 	vertical-align: middle;
 	font-size: 20px;
 	-moz-appearance: textfield;
-    -webkit-appearance: textfield;
-    font: -moz-field;
-    float:left;
-    white-space: nowrap;
-    overflow: hidden;
+  -webkit-appearance: textfield;
+  font: -moz-field;
+  float:left;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 #add-button{
@@ -55,4 +55,20 @@
 	color:white;
 	vertical-align: middle;
 	font-family: 'Helvetica';
+}
+
+.checkbox-item{
+  height: 30px;
+  width: 30px;
+  border: 2px solid gray;
+  margin-bottom:10px;
+  margin-top:10px;
+  margin-right:1.25%;
+  float:right;
+  cursor:pointer;
+  text-align: center;
+  line-height: 30px;
+  vertical-align: middle;
+  color:gray;
+  font-size:25px;
 }
