@@ -43,8 +43,6 @@ $(document).ready(function(){
 		listData.checked[listData.size - 1] = false;
     listData.description[listData.size - 1] = "";
     $(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + (listData.size-1) + "</p>" + "<div class = 'list-input' contenteditable>" + "</div><p hidden>" + (listData.size-1) + "</p><div class = 'remove-item'>X</div><p hidden>" + (listData.size-1) + "</p><div class = 'checkbox-item'></div></div>");
-    	listData.description[listData.size - 1] = "";
-    	$(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + (listData.size-1) + "</p>" + "<div class = 'list-input' contenteditable>" + "</div><p hidden>" + (listData.size-1) + "</p>" + "<div class = 'remove-item'>X</div></div>");
 		localStorage.setItem(descriptionText, JSON.stringify(listData.description));
 		localStorage.setItem(checkedText, JSON.stringify(listData.checked));
 		localStorage.setItem(sizeText,listData.size);
