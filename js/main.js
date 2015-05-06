@@ -11,11 +11,8 @@ $(document).ready(function(){
 
 	var listData = new listData();
 	var descriptionText = 'description';
-<<<<<<< HEAD
 	var checkedText = 'checked';
-=======
 	var checkedText = 'checked'
->>>>>>> 2992faf4809c9ce0113d8a941316a4eae7a2e322
 	var sizeText = 'listSize';
 
 	if(localStorage.getItem(descriptionText) && localStorage.getItem(checkedText) && localStorage.getItem(sizeText)){
@@ -23,7 +20,6 @@ $(document).ready(function(){
 		listData.checked = JSON.parse(localStorage.getItem(checkedText));
 		listData.size = parseInt(localStorage.getItem(sizeText));
 		for(var key in listData.description){
-<<<<<<< HEAD
       var checkText = "";
       var checkMark = false;
       var strikeThrough = "none";
@@ -33,9 +29,7 @@ $(document).ready(function(){
         strikeThrough = "line-through";
       }
 			$(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + key + "</p>" + "<div class = 'list-input' contenteditable="+ !checkMark + " style='text-decoration:"+strikeThrough+";'>" + listData.description[key] + "</div><p hidden>" + key + "</p><div class = 'remove-item'>X</div><p hidden>" + (listData.size-1) + "</p><div class = 'checkbox-item'>" + checkText + "</div></div>");
-=======
 			$(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + key + "</p>" + "<div class = 'list-input' contenteditable>" + listData.description[key] + "</div><p hidden>" + key + "</p>" + "<div class = 'remove-item'>X</div></div>");
->>>>>>> 2992faf4809c9ce0113d8a941316a4eae7a2e322
 		}
 	}
 	else{
@@ -48,13 +42,10 @@ $(document).ready(function(){
 	$("#add-button").click(function(){
 		listData.size += 1;
 		listData.checked[listData.size - 1] = false;
-<<<<<<< HEAD
     listData.description[listData.size - 1] = "";
     $(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + (listData.size-1) + "</p>" + "<div class = 'list-input' contenteditable>" + "</div><p hidden>" + (listData.size-1) + "</p><div class = 'remove-item'>X</div><p hidden>" + (listData.size-1) + "</p><div class = 'checkbox-item'></div></div>");
-=======
     	listData.description[listData.size - 1] = "";
     	$(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + (listData.size-1) + "</p>" + "<div class = 'list-input' contenteditable>" + "</div><p hidden>" + (listData.size-1) + "</p>" + "<div class = 'remove-item'>X</div></div>");
->>>>>>> 2992faf4809c9ce0113d8a941316a4eae7a2e322
 		localStorage.setItem(descriptionText, JSON.stringify(listData.description));
 		localStorage.setItem(checkedText, JSON.stringify(listData.checked));
 		localStorage.setItem(sizeText,listData.size);
@@ -69,10 +60,7 @@ $(document).ready(function(){
 	$(document).on("keyup change",'.list-input',function(){
 		listData.description[$(this).prev().text()] = $(this).text();
 		localStorage.setItem(descriptionText, JSON.stringify(listData.description));
-<<<<<<< HEAD
-=======
 		localStorage.setItem(checkedText, JSON.stringify(listData.checked));
->>>>>>> 2992faf4809c9ce0113d8a941316a4eae7a2e322
 	});
 
 	$(document).on("click",".remove-item",function(){
@@ -82,7 +70,6 @@ $(document).ready(function(){
 		localStorage.setItem(descriptionText, JSON.stringify(listData.description));
 		localStorage.setItem(checkedText, JSON.stringify(listData.checked));
 	});
-<<<<<<< HEAD
   
   $(document).on("click",".checkbox-item",function(){
     var checkText = "";
@@ -99,7 +86,5 @@ $(document).ready(function(){
     listData.checked[$(this).prev().text()] = checkMark;
     localStorage.setItem(checkedText, JSON.stringify(listData.checked));
   });
-=======
->>>>>>> 2992faf4809c9ce0113d8a941316a4eae7a2e322
 
 });
