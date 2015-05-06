@@ -9,24 +9,43 @@
 	border-radius:10px;
 	margin-bottom: 10px;
 	margin-top: 10px;
+<<<<<<< HEAD
   background-color: -moz-field;
   box-shadow: 1px 1px 1px 0 lightgray inset;  
   display:inline-table;
   clear:both;
+=======
+    background-color: -moz-field;
+    box-shadow: 1px 1px 1px 0 lightgray inset;  
+    display:inline-table;
+    clear:both;
+>>>>>>> 2992faf4809c9ce0113d8a941316a4eae7a2e322
 }
 
 .list-input{
 	height:50px;
+<<<<<<< HEAD
 	width:78%;
+=======
+	width:80%;
+>>>>>>> 2992faf4809c9ce0113d8a941316a4eae7a2e322
 	line-height: 50px;
 	vertical-align: middle;
 	font-size: 20px;
 	-moz-appearance: textfield;
+<<<<<<< HEAD
   -webkit-appearance: textfield;
   font: -moz-field;
   float:left;
   white-space: nowrap;
   overflow: hidden;
+=======
+    -webkit-appearance: textfield;
+    font: -moz-field;
+    float:left;
+    white-space: nowrap;
+    overflow: hidden;
+>>>>>>> 2992faf4809c9ce0113d8a941316a4eae7a2e322
 }
 
 #add-button{
@@ -56,6 +75,7 @@
 	vertical-align: middle;
 	font-family: 'Helvetica';
 }
+<<<<<<< HEAD
 
 .checkbox-item{
   height: 30px;
@@ -72,3 +92,5 @@
   color:gray;
   font-size:25px;
 }
+=======
+>>>>>>> 2992faf4809c9ce0113d8a941316a4eae7a2e322
