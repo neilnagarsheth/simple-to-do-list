@@ -13,11 +13,16 @@
   box-shadow: 1px 1px 1px 0 lightgray inset;  
   display:inline-table;
   clear:both;
+    background-color: -moz-field;
+    box-shadow: 1px 1px 1px 0 lightgray inset;  
+    display:inline-table;
+    clear:both;
 }
 
 .list-input{
 	height:50px;
 	width:78%;
+	width:80%;
 	line-height: 50px;
 	vertical-align: middle;
 	font-size: 20px;
@@ -27,6 +32,11 @@
   float:left;
   white-space: nowrap;
   overflow: hidden;
+    -webkit-appearance: textfield;
+    font: -moz-field;
+    float:left;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 #add-button{
@@ -43,6 +53,8 @@
 	height: 30px;
 	width: 30px;
 	border: 2px;
+	width: 12%;
+	border: 2px solid black;
 	border-radius:20px;
 	background-color: red;
 	margin-bottom: 10px;
@@ -71,4 +83,7 @@
   vertical-align: middle;
   color:gray;
   font-size:25px;
+	margin-right: 3%;
+	float: right;
+	cursor:pointer;
 }
