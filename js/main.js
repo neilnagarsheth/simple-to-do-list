@@ -12,6 +12,7 @@ $(document).ready(function(){
 	var listData = new listData();
 	var descriptionText = 'description';
 	var checkedText = 'checked';
+	var checkedText = 'checked'
 	var sizeText = 'listSize';
 
 	if(localStorage.getItem(descriptionText) && localStorage.getItem(checkedText) && localStorage.getItem(sizeText)){
@@ -29,6 +30,7 @@ $(document).ready(function(){
       }
 			$(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + key + "</p>" + "<div class = 'list-input' contenteditable="+ !checkMark + " style='text-decoration:"+strikeThrough+";'>" + listData.description[key] + "</div><p hidden>" + key + "</p><div class = 'remove-item'>X</div><p hidden>" + (listData.size-1) + "</p><div class = 'checkbox-item'>" + checkText + "</div></div>");
 		}
+    appendToolTips();
 	}
 	else{
 		localStorage.setItem(descriptionText, JSON.stringify(listData.description));
@@ -42,6 +44,7 @@ $(document).ready(function(){
 		listData.checked[listData.size - 1] = false;
     listData.description[listData.size - 1] = "";
     $(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + (listData.size-1) + "</p>" + "<div class = 'list-input' contenteditable>" + "</div><p hidden>" + (listData.size-1) + "</p><div class = 'remove-item'>X</div><p hidden>" + (listData.size-1) + "</p><div class = 'checkbox-item'></div></div>");
+    appendToolTips();
 		localStorage.setItem(descriptionText, JSON.stringify(listData.description));
 		localStorage.setItem(checkedText, JSON.stringify(listData.checked));
 		localStorage.setItem(sizeText,listData.size);
@@ -56,14 +59,17 @@ $(document).ready(function(){
 	$(document).on("keyup change",'.list-input',function(){
 		listData.description[$(this).prev().text()] = $(this).text();
 		localStorage.setItem(descriptionText, JSON.stringify(listData.description));
+		localStorage.setItem(checkedText, JSON.stringify(listData.checked));
 	});
 
 	$(document).on("click",".remove-item",function(){
-		delete listData.checked[$(this).prev().text()];
-		delete listData.description[$(this).prev().text()];
-		$(this).parent().remove();
-		localStorage.setItem(descriptionText, JSON.stringify(listData.description));
-		localStorage.setItem(checkedText, JSON.stringify(listData.checked));
+    if(confirm("Are you sure you want to remove this item from your list?")){
+      delete listData.checked[$(this).prev().text()];
+      delete listData.description[$(this).prev().text()];
+      $(this).parent().remove();
+      localStorage.setItem(descriptionText, JSON.stringify(listData.description));
+      localStorage.setItem(checkedText, JSON.stringify(listData.checked));
+    }
 	});
   
   $(document).on("click",".checkbox-item",function(){
@@ -82,4 +88,10 @@ $(document).ready(function(){
     localStorage.setItem(checkedText, JSON.stringify(listData.checked));
   });
 
+  function appendToolTips(){
+    $(".remove-item").attr('title',"Remove this item from the list");
+    $(".checkbox-item").attr('title',"Check off this item");
+    $(".list-input").attr('title',"Add a description of the item");
+  }
+  
 });
