@@ -31,7 +31,6 @@ $(document).ready(function(){
 			$(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + key + "</p>" + "<div class = 'list-input' contenteditable="+ !checkMark + " style='text-decoration:"+strikeThrough+";'>" + listData.description[key] + "</div><p hidden>" + key + "</p><div class = 'remove-item'>X</div><p hidden>" + (listData.size-1) + "</p><div class = 'checkbox-item'>" + checkText + "</div></div>");
 		}
     appendToolTips();
-			$(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + key + "</p>" + "<div class = 'list-input' contenteditable>" + listData.description[key] + "</div><p hidden>" + key + "</p>" + "<div class = 'remove-item'></div></div>");
 		}
 	}
 	else{
