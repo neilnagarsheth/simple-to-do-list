@@ -20,18 +20,17 @@ $(document).ready(function(){
 		listData.checked = JSON.parse(localStorage.getItem(checkedText));
 		listData.size = parseInt(localStorage.getItem(sizeText));
 		for(var key in listData.description){
-      var checkText = "";
-      var checkMark = false;
-      var strikeThrough = "none";
-      if(listData.checked[key]){
-        checkText = '\u2713';
-        checkMark = true;
-        strikeThrough = "line-through";
-      }
-			$(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + key + "</p>" + "<div class = 'list-input' contenteditable="+ !checkMark + " style='text-decoration:"+strikeThrough+";'>" + listData.description[key] + "</div><p hidden>" + key + "</p><div class = 'remove-item'>X</div><p hidden>" + key + "</p><div class = 'checkbox-item'>" + checkText + "</div></div>");
-		}
-    appendToolTips();
-		}
+      	var checkText = "";
+      	var checkMark = false;
+      	var strikeThrough = "none";
+      		if(listData.checked[key]){
+        	checkText = '\u2713';
+        	checkMark = true;
+        	strikeThrough = "line-through";
+      		}
+		$(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + key + "</p>" + "<div class = 'list-input' contenteditable="+ !checkMark + " style='text-decoration:"+strikeThrough+";'>" + listData.description[key] + "</div><p hidden>" + key + "</p><div class = 'remove-item'>X</div><p hidden>" + key + "</p><div class = 'checkbox-item'>" + checkText + "</div></div>");
+	}
+   	 appendToolTips();
 	}
 	else{
 		localStorage.setItem(descriptionText, JSON.stringify(listData.description));
