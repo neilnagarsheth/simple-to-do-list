@@ -28,7 +28,7 @@ $(document).ready(function(){
         checkMark = true;
         strikeThrough = "line-through";
       }
-			$(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + key + "</p>" + "<div class = 'list-input' contenteditable="+ !checkMark + " style='text-decoration:"+strikeThrough+";'>" + listData.description[key] + "</div><p hidden>" + key + "</p><div class = 'remove-item'>X</div><p hidden>" + (listData.size-1) + "</p><div class = 'checkbox-item'>" + checkText + "</div></div>");
+			$(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + key + "</p>" + "<div class = 'list-input' contenteditable="+ !checkMark + " style='text-decoration:"+strikeThrough+";'>" + listData.description[key] + "</div><p hidden>" + key + "</p><div class = 'remove-item'>X</div><p hidden>" + key + "</p><div class = 'checkbox-item'>" + checkText + "</div></div>");
 		}
     appendToolTips();
 		}
@@ -44,7 +44,9 @@ $(document).ready(function(){
 		listData.size += 1;
 		listData.checked[listData.size - 1] = false;
     listData.description[listData.size - 1] = "";
-    $(".shiftnav-content-wrap").append("<div class = 'list-item'><p hidden>" + (listData.size-1) + "</p>" + "<div class = 'list-input' contenteditable>" + "</div><p hidden>" + (listData.size-1) + "</p><div class = 'remove-item'>X</div><p hidden>" + (listData.size-1) + "</p><div class = 'checkbox-item'></div></div>");
+    var addItem = $("<div class = 'list-item'><p hidden>" + (listData.size-1) + "</p>" + "<div class = 'list-input' contenteditable>" + "</div><p hidden>" + (listData.size-1) + "</p><div class = 'remove-item'>X</div><p hidden>" + (listData.size-1) + "</p><div class = 'checkbox-item'></div></div>").hide();
+    $(".shiftnav-content-wrap").append(addItem);
+    addItem.show('slow');
     appendToolTips();
 		localStorage.setItem(descriptionText, JSON.stringify(listData.description));
 		localStorage.setItem(checkedText, JSON.stringify(listData.checked));
@@ -67,7 +69,7 @@ $(document).ready(function(){
     if(confirm("Are you sure you want to remove this item from your list?")){
       delete listData.checked[$(this).prev().text()];
       delete listData.description[$(this).prev().text()];
-      $(this).parent().remove();
+      $(this).parent().hide('slow', function(){ $(this).remove();});
       localStorage.setItem(descriptionText, JSON.stringify(listData.description));
       localStorage.setItem(checkedText, JSON.stringify(listData.checked));
     }
