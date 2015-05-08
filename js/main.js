@@ -96,6 +96,4 @@ $(document).ready(function(){
     $(".list-input").attr('title',"Add a description of the item");
   }
   
-  });
-
 });
