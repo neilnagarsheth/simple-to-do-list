@@ -20,22 +20,21 @@ body{
   clear:both;
 }
 
-.list-input{
-	height:50px;
-	width:78%;
-  padding 10px;
-	line-height: 50px;
-	vertical-align: middle;
-	font-size: 20px;
-	-moz-appearance: textfield;
-  -webkit-appearance: textfield;
-  font: -moz-field;
+input{
+  height:48px;
+  width:78%;
+  line-height: 50px;
+  vertical-align: middle;
+  font-size: 20px;
   float:left;
   white-space: nowrap;
   overflow: hidden;
   margin-top:2px;
   margin-left:2px;
   color:#424342;
+  border-radius:10px;
+  border-width:0px;
+  background-color: #E2E2E2;
 }
 
 #add-button{
@@ -92,4 +91,10 @@ body{
   vertical-align: middle;
   color:#16BAC5;
   font-size:25px;
+}
+
+@media screen and (max-width: 360px) {
+   input{
+      width:60%;
+   }
 }
